@@ -30,7 +30,6 @@ describe("Registry (unitaria con mock)", () => {
 
     const result = registry.registerVoter(p);
 
-    // Assert
     expect(result).toBe(RegisterResult.DUPLICATED);
     expect(repo.save).not.toHaveBeenCalled();
   });
@@ -47,7 +46,6 @@ describe("Registry (unitaria con mock)", () => {
 
     const result = registry.registerVoter(p);
 
-    // Assert
     expect(result).toBe(RegisterResult.VALID);
     expect(repo.save).toHaveBeenCalledOnce();
     expect(repo.save).toHaveBeenCalledWith(10, "Luis", 30, true);
